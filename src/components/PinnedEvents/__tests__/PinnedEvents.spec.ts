@@ -30,6 +30,7 @@ describe('PinnedEvents', () => {
     location: 'Convention Center, Phoenix',
     description: 'Annual technology conference.',
     image: 'https://example.com/conference.jpg',
+    category: 'technology', // Added category
   }
 
   const mockEvent2: Event = {
@@ -38,6 +39,7 @@ describe('PinnedEvents', () => {
     location: 'Desert Park',
     description: 'Summer music festival.',
     image: 'https://example.com/festival.jpg',
+    category: 'entertainment', // Added category
   }
 
   const mockEvent3: Event = {
@@ -46,6 +48,7 @@ describe('PinnedEvents', () => {
     location: 'City Gallery',
     description: 'Modern art showcase.',
     image: 'https://example.com/art.jpg',
+    category: 'art', // Added category
   }
 
   beforeEach(() => {
@@ -97,8 +100,8 @@ describe('PinnedEvents', () => {
       })
 
       const cards = wrapper.findAllComponents({ name: 'PinnedEventCard' })
-      expect(cards[0].props('event')).toEqual(mockEvent1)
-      expect(cards[1].props('event')).toEqual(mockEvent2)
+      expect(cards[0]?.props('event')).toEqual(mockEvent1)
+      expect(cards[1]?.props('event')).toEqual(mockEvent2)
     })
 
     it('should use event name as key for v-for', () => {
@@ -113,8 +116,8 @@ describe('PinnedEvents', () => {
 
       const cards = wrapper.findAllComponents({ name: 'PinnedEventCard' })
       // Verify props are passed correctly (keys are used internally by Vue)
-      expect(cards[0].props('event').name).toBe(mockEvent1.name)
-      expect(cards[1].props('event').name).toBe(mockEvent2.name)
+      expect(cards[0]?.props('event')?.name).toBe(mockEvent1.name)
+      expect(cards[1]?.props('event')?.name).toBe(mockEvent2.name)
     })
 
     it('should render multiple pinned events correctly', () => {
@@ -177,6 +180,7 @@ describe('PinnedEvents', () => {
         location: 'Test',
         description: 'Test',
         image: 'test.jpg',
+        category: 'general', // Added category
       }
 
       pinnedStore.togglePin(emptyNameEvent)
@@ -197,6 +201,7 @@ describe('PinnedEvents', () => {
         location: undefined as any,
         description: '',
         image: '',
+        category: 'general', // Added category
       }
 
       pinnedStore.togglePin(nullishEvent)
@@ -222,6 +227,7 @@ describe('PinnedEvents', () => {
         location: 'Test',
         description: 'Test',
         image: 'test.jpg',
+        category: 'general', // Added category
       }
 
       pinnedStore.togglePin(specialCharsEvent)
@@ -242,6 +248,7 @@ describe('PinnedEvents', () => {
         location: 'Test',
         description: 'Test',
         image: 'test.jpg',
+        category: 'general', // Added category
       }
 
       pinnedStore.togglePin(longNameEvent)
@@ -262,6 +269,7 @@ describe('PinnedEvents', () => {
         location: 'Test',
         description: 'Test',
         image: 'test.jpg',
+        category: 'celebration', // Added category
       }
 
       pinnedStore.togglePin(unicodeEvent)
@@ -307,6 +315,7 @@ describe('PinnedEvents', () => {
           location: 'Test',
           description: 'Test',
           image: 'test.jpg',
+          category: 'general', // Added category
         })
       }
 
@@ -401,9 +410,9 @@ describe('PinnedEvents', () => {
       })
 
       const cards = wrapper.findAllComponents({ name: 'PinnedEventCard' })
-      expect(cards[0].props('event').name).toBe(mockEvent1.name)
-      expect(cards[1].props('event').name).toBe(mockEvent2.name)
-      expect(cards[2].props('event').name).toBe(mockEvent3.name)
+      expect(cards[0]?.props('event')?.name).toBe(mockEvent1.name)
+      expect(cards[1]?.props('event')?.name).toBe(mockEvent2.name)
+      expect(cards[2]?.props('event')?.name).toBe(mockEvent3.name)
     })
 
     it('should update when store is cleared and repopulated', async () => {

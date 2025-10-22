@@ -36,6 +36,7 @@ describe('EventList', () => {
     location: 'Location A',
     description: 'First event',
     image: 'https://example.com/event1.jpg',
+    category: 'workshop', // Added category
   }
 
   const mockEvent2: Event = {
@@ -44,6 +45,7 @@ describe('EventList', () => {
     location: 'Location B',
     description: 'Second event',
     image: 'https://example.com/event2.jpg',
+    category: 'conference', // Added category
   }
 
   const mockEvent3: Event = {
@@ -52,6 +54,7 @@ describe('EventList', () => {
     location: 'Location C',
     description: 'Third event',
     image: 'https://example.com/event3.jpg',
+    category: 'meetup', // Added category
   }
 
   beforeEach(() => {
@@ -102,8 +105,8 @@ describe('EventList', () => {
       })
 
       const cards = wrapper.findAllComponents({ name: 'EventCard' })
-      expect(cards[0].props('event')).toEqual(mockEvent1)
-      expect(cards[1].props('event')).toEqual(mockEvent2)
+      expect(cards[0]?.props('event')).toEqual(mockEvent1)
+      expect(cards[1]?.props('event')).toEqual(mockEvent2)
     })
 
     it('should sort events by time in ascending order', () => {
@@ -117,9 +120,9 @@ describe('EventList', () => {
       })
 
       const cards = wrapper.findAllComponents({ name: 'EventCard' })
-      expect(cards[0].props('event').name).toBe('Early Event')
-      expect(cards[1].props('event').name).toBe('Middle Event')
-      expect(cards[2].props('event').name).toBe('Late Event')
+      expect(cards[0]?.props('event')?.name).toBe('Early Event')
+      expect(cards[1]?.props('event')?.name).toBe('Middle Event')
+      expect(cards[2]?.props('event')?.name).toBe('Late Event')
     })
 
     it('should use event name as key for v-for', () => {
@@ -132,8 +135,8 @@ describe('EventList', () => {
       })
 
       const cards = wrapper.findAllComponents({ name: 'EventCard' })
-      expect(cards[0].props('event').name).toBe(mockEvent1.name)
-      expect(cards[1].props('event').name).toBe(mockEvent2.name)
+      expect(cards[0]?.props('event')?.name).toBe(mockEvent1.name)
+      expect(cards[1]?.props('event')?.name).toBe(mockEvent2.name)
     })
 
     it('should render with no events', () => {
@@ -185,6 +188,7 @@ describe('EventList', () => {
         location: 'Location',
         description: 'Description',
         image: 'image.jpg',
+        category: 'general', // Added category
       }
 
       eventStore.events = [mockEvent1, nullTimeEvent]
@@ -206,6 +210,7 @@ describe('EventList', () => {
         location: 'Location',
         description: 'Description',
         image: 'image.jpg',
+        category: 'general', // Added category
       }
 
       eventStore.events = [mockEvent1, undefinedTimeEvent]
@@ -226,6 +231,7 @@ describe('EventList', () => {
         location: 'Location',
         description: 'Description',
         image: 'image.jpg',
+        category: 'general', // Added category
       }
 
       eventStore.events = [mockEvent1, emptyTimeEvent]
@@ -246,6 +252,7 @@ describe('EventList', () => {
         location: 'Location',
         description: 'Description',
         image: 'image.jpg',
+        category: 'general', // Added category
       }
 
       eventStore.events = [emptyNameEvent]
@@ -268,6 +275,7 @@ describe('EventList', () => {
         location: 'Location',
         description: 'Description',
         image: 'image.jpg',
+        category: 'general', // Added category
       }
 
       eventStore.events = [mockEvent1, badDateEvent]
@@ -289,6 +297,7 @@ describe('EventList', () => {
         location: 'Location',
         description: 'Description',
         image: 'image.jpg',
+        category: 'workshop', // Added category
       }
 
       const sameTime2: Event = {
@@ -297,6 +306,7 @@ describe('EventList', () => {
         location: 'Location',
         description: 'Description',
         image: 'image.jpg',
+        category: 'workshop', // Added category
       }
 
       eventStore.events = [sameTime1, sameTime2]
@@ -317,6 +327,7 @@ describe('EventList', () => {
         location: 'Location',
         description: 'Description',
         image: 'image.jpg',
+        category: 'general', // Added category
       }
 
       eventStore.events = [specialCharsEvent]
@@ -337,6 +348,7 @@ describe('EventList', () => {
         location: 'Location',
         description: 'Description',
         image: 'image.jpg',
+        category: 'general', // Added category
       }
 
       eventStore.events = [longNameEvent]
@@ -357,6 +369,7 @@ describe('EventList', () => {
         location: 'Location',
         description: 'Description',
         image: 'image.jpg',
+        category: 'celebration', // Added category
       }
 
       eventStore.events = [unicodeEvent]
@@ -379,6 +392,7 @@ describe('EventList', () => {
           location: 'Location',
           description: 'Description',
           image: 'image.jpg',
+          category: 'general', // Added category
         })
       }
 
@@ -400,6 +414,7 @@ describe('EventList', () => {
         location: 'Location',
         description: 'Description',
         image: 'image.jpg',
+        category: 'historical', // Added category
       }
 
       eventStore.events = [mockEvent1, pastEvent]
@@ -412,8 +427,8 @@ describe('EventList', () => {
 
       const cards = wrapper.findAllComponents({ name: 'EventCard' })
       // Past event should be sorted first
-      expect(cards[0].props('event').name).toBe('Past Event')
-      expect(cards[1].props('event').name).toBe('Early Event')
+      expect(cards[0]?.props('event')?.name).toBe('Past Event')
+      expect(cards[1]?.props('event')?.name).toBe('Early Event')
     })
 
     it('should handle dates far in the future', () => {
@@ -423,6 +438,7 @@ describe('EventList', () => {
         location: 'Location',
         description: 'Description',
         image: 'image.jpg',
+        category: 'futuristic', // Added category
       }
 
       eventStore.events = [mockEvent1, futureEvent]
@@ -435,8 +451,8 @@ describe('EventList', () => {
 
       const cards = wrapper.findAllComponents({ name: 'EventCard' })
       // Future event should be sorted last
-      expect(cards[0].props('event').name).toBe('Early Event')
-      expect(cards[1].props('event').name).toBe('Future Event')
+      expect(cards[0]?.props('event')?.name).toBe('Early Event')
+      expect(cards[1]?.props('event')?.name).toBe('Future Event')
     })
   })
 
@@ -457,9 +473,9 @@ describe('EventList', () => {
       })
 
       const cards = wrapper.findAllComponents({ name: 'EventCard' })
-      expect(cards[0].props('event').name).toBe('January')
-      expect(cards[1].props('event').name).toBe('March')
-      expect(cards[2].props('event').name).toBe('June')
+      expect(cards[0]?.props('event')?.name).toBe('January')
+      expect(cards[1]?.props('event')?.name).toBe('March')
+      expect(cards[2]?.props('event')?.name).toBe('June')
     })
 
     it('should not mutate original store events array', () => {
@@ -485,6 +501,7 @@ describe('EventList', () => {
         location: 'Location',
         description: 'Description',
         image: 'image.jpg',
+        category: 'general', // Added category
       }
 
       const invalidEvent: Event = {
@@ -493,6 +510,7 @@ describe('EventList', () => {
         location: 'Location',
         description: 'Description',
         image: 'image.jpg',
+        category: 'general', // Added category
       }
 
       eventStore.events = [invalidEvent, validEvent]
@@ -553,7 +571,7 @@ describe('EventList', () => {
       })
 
       const cards = wrapper.findAllComponents({ name: 'EventCard' })
-      expect(cards[0].props('event').name).toBe('Early Event')
+      expect(cards[0]?.props('event')?.name).toBe('Early Event')
 
       // Change the order
       eventStore.events = [mockEvent2, mockEvent1]
@@ -561,7 +579,7 @@ describe('EventList', () => {
 
       const updatedCards = wrapper.findAllComponents({ name: 'EventCard' })
       // Should still be sorted by time, not by array order
-      expect(updatedCards[0].props('event').name).toBe('Early Event')
+      expect(updatedCards[0]?.props('event')?.name).toBe('Early Event')
     })
 
     it('should update when store is cleared', async () => {

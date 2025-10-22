@@ -39,6 +39,7 @@ describe('EventCard', () => {
     location: 'Convention Center, Phoenix',
     description: 'Annual technology conference featuring the latest innovations.',
     image: 'https://example.com/conference.jpg',
+    category: 'technology', // Added category
   }
 
   beforeEach(() => {
@@ -140,11 +141,11 @@ describe('EventCard', () => {
         },
       })
 
-      expect(wrapper.vm.isModalOpen).toBe(false)
+      expect((wrapper.vm as any).isModalOpen).toBe(false)
 
       await wrapper.find('.event-card').trigger('click')
 
-      expect(wrapper.vm.isModalOpen).toBe(true)
+      expect((wrapper.vm as any).isModalOpen).toBe(true)
     })
 
     it('should update modal isOpen prop when opening', async () => {
@@ -177,13 +178,13 @@ describe('EventCard', () => {
 
       // Open modal first
       await wrapper.find('.event-card').trigger('click')
-      expect(wrapper.vm.isModalOpen).toBe(true)
+      expect((wrapper.vm as any).isModalOpen).toBe(true)
 
       // Close modal
       const modal = wrapper.findComponent({ name: 'EventModal' })
       await modal.vm.$emit('close')
 
-      expect(wrapper.vm.isModalOpen).toBe(false)
+      expect((wrapper.vm as any).isModalOpen).toBe(false)
     })
 
     it('should have clickable card with cursor pointer', () => {
@@ -211,6 +212,7 @@ describe('EventCard', () => {
         location: '',
         description: '',
         image: '',
+        category: '', // Added category
       }
 
       vi.mocked(useTime.formatDate).mockReturnValue('')
@@ -295,6 +297,7 @@ describe('EventCard', () => {
       const partialEvent = {
         name: 'Test Event',
         time: '2025-01-01',
+        category: 'general', // Added category
       } as Event
 
       wrapper = mount(EventCard, {
@@ -416,6 +419,7 @@ describe('EventCard', () => {
         location: 'Convention Center 📍',
         description: 'Description',
         image: 'image.jpg',
+        category: 'conference', // Added category
       }
 
       wrapper = mount(EventCard, {
@@ -466,7 +470,7 @@ describe('EventCard', () => {
       await wrapper.find('.event-card').trigger('click')
 
       // Modal should be open
-      expect(wrapper.vm.isModalOpen).toBe(true)
+      expect((wrapper.vm as any).isModalOpen).toBe(true)
     })
   })
 
@@ -481,7 +485,7 @@ describe('EventCard', () => {
         },
       })
 
-      expect(wrapper.vm.isModalOpen).toBe(false)
+      expect((wrapper.vm as any).isModalOpen).toBe(false)
     })
 
     it('should toggle modal open and close', async () => {
@@ -496,12 +500,12 @@ describe('EventCard', () => {
 
       // Open modal
       await wrapper.find('.event-card').trigger('click')
-      expect(wrapper.vm.isModalOpen).toBe(true)
+      expect((wrapper.vm as any).isModalOpen).toBe(true)
 
       // Close modal
       const modal = wrapper.findComponent({ name: 'EventModal' })
       await modal.vm.$emit('close')
-      expect(wrapper.vm.isModalOpen).toBe(false)
+      expect((wrapper.vm as any).isModalOpen).toBe(false)
     })
 
     it('should keep modal state independent between opens', async () => {
@@ -518,15 +522,15 @@ describe('EventCard', () => {
 
       // Open and close cycle 1
       await wrapper.find('.event-card').trigger('click')
-      expect(wrapper.vm.isModalOpen).toBe(true)
+      expect((wrapper.vm as any).isModalOpen).toBe(true)
       await modal.vm.$emit('close')
-      expect(wrapper.vm.isModalOpen).toBe(false)
+      expect((wrapper.vm as any).isModalOpen).toBe(false)
 
       // Open and close cycle 2
       await wrapper.find('.event-card').trigger('click')
-      expect(wrapper.vm.isModalOpen).toBe(true)
+      expect((wrapper.vm as any).isModalOpen).toBe(true)
       await modal.vm.$emit('close')
-      expect(wrapper.vm.isModalOpen).toBe(false)
+      expect((wrapper.vm as any).isModalOpen).toBe(false)
     })
   })
 
@@ -603,6 +607,7 @@ describe('EventCard', () => {
         location: 'New Location',
         description: 'New Description',
         image: 'new-image.jpg',
+        category: 'workshop', // Added category
       }
 
       await wrapper.setProps({ event: newEvent })

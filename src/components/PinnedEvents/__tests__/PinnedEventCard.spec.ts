@@ -37,6 +37,7 @@ describe('PinnedEventCard', () => {
     location: 'Convention Center, Phoenix',
     description: 'Annual technology conference featuring the latest innovations.',
     image: 'https://example.com/conference.jpg',
+    category: 'technology', // Added category
   }
 
   beforeEach(() => {
@@ -93,11 +94,11 @@ describe('PinnedEventCard', () => {
         },
       })
 
-      expect(wrapper.vm.isModalOpen).toBe(false)
+      expect((wrapper.vm as any).isModalOpen).toBe(false)
 
       await wrapper.find('.image-container').trigger('click')
 
-      expect(wrapper.vm.isModalOpen).toBe(true)
+      expect((wrapper.vm as any).isModalOpen).toBe(true)
     })
 
     it('should open modal when event details are clicked', async () => {
@@ -110,11 +111,11 @@ describe('PinnedEventCard', () => {
         },
       })
 
-      expect(wrapper.vm.isModalOpen).toBe(false)
+      expect((wrapper.vm as any).isModalOpen).toBe(false)
 
       await wrapper.find('.pinned-event-details').trigger('click')
 
-      expect(wrapper.vm.isModalOpen).toBe(true)
+      expect((wrapper.vm as any).isModalOpen).toBe(true)
     })
 
     it('should close modal when EventModal emits close', async () => {
@@ -129,13 +130,13 @@ describe('PinnedEventCard', () => {
 
       // Open modal first
       await wrapper.find('.image-container').trigger('click')
-      expect(wrapper.vm.isModalOpen).toBe(true)
+      expect((wrapper.vm as any).isModalOpen).toBe(true)
 
       // Emit close event from modal
       const modal = wrapper.findComponent({ name: 'EventModal' })
       await modal.vm.$emit('close')
 
-      expect(wrapper.vm.isModalOpen).toBe(false)
+      expect((wrapper.vm as any).isModalOpen).toBe(false)
     })
 
     it('should toggle pin when pin button is clicked', async () => {
@@ -167,12 +168,12 @@ describe('PinnedEventCard', () => {
         },
       })
 
-      expect(wrapper.vm.isModalOpen).toBe(false)
+      expect((wrapper.vm as any).isModalOpen).toBe(false)
 
       await wrapper.find('.pin-icon-button').trigger('click')
 
       // Modal should remain closed due to @click.stop
-      expect(wrapper.vm.isModalOpen).toBe(false)
+      expect((wrapper.vm as any).isModalOpen).toBe(false)
     })
 
     it('should compute isPinned correctly', async () => {
@@ -185,12 +186,12 @@ describe('PinnedEventCard', () => {
         },
       })
 
-      expect(wrapper.vm.isPinned).toBe(false)
+      expect((wrapper.vm as any).isPinned).toBe(false)
 
       pinnedStore.togglePin(mockEvent)
       await wrapper.vm.$nextTick()
 
-      expect(wrapper.vm.isPinned).toBe(true)
+      expect((wrapper.vm as any).isPinned).toBe(true)
     })
 
     it('should update aria-label based on pin status', async () => {
@@ -253,6 +254,7 @@ describe('PinnedEventCard', () => {
         location: '',
         description: '',
         image: '',
+        category: '', // Added category
       }
 
       vi.mocked(useTime.formatDate).mockReturnValue('')
@@ -336,6 +338,7 @@ describe('PinnedEventCard', () => {
       const partialEvent = {
         name: 'Test Event',
         time: '2025-01-01',
+        category: 'general', // Added category
       } as Event
 
       wrapper = mount(PinnedEventCard, {
@@ -485,7 +488,7 @@ describe('PinnedEventCard', () => {
       await wrapper.find('.image-container').trigger('click')
 
       // Modal should be open
-      expect(wrapper.vm.isModalOpen).toBe(true)
+      expect((wrapper.vm as any).isModalOpen).toBe(true)
     })
 
     it('should handle rapid pin toggling', async () => {
@@ -578,7 +581,7 @@ describe('PinnedEventCard', () => {
         },
       })
 
-      expect(wrapper.vm.isModalOpen).toBe(false)
+      expect((wrapper.vm as any).isModalOpen).toBe(false)
     })
 
     it('should toggle modal open and close', async () => {
@@ -593,12 +596,12 @@ describe('PinnedEventCard', () => {
 
       // Open modal
       await wrapper.find('.image-container').trigger('click')
-      expect(wrapper.vm.isModalOpen).toBe(true)
+      expect((wrapper.vm as any).isModalOpen).toBe(true)
 
       // Close modal
       const modal = wrapper.findComponent({ name: 'EventModal' })
       await modal.vm.$emit('close')
-      expect(wrapper.vm.isModalOpen).toBe(false)
+      expect((wrapper.vm as any).isModalOpen).toBe(false)
     })
 
     it('should keep modal state independent between opens', async () => {
@@ -615,15 +618,15 @@ describe('PinnedEventCard', () => {
 
       // Open and close cycle 1
       await wrapper.find('.image-container').trigger('click')
-      expect(wrapper.vm.isModalOpen).toBe(true)
+      expect((wrapper.vm as any).isModalOpen).toBe(true)
       await modal.vm.$emit('close')
-      expect(wrapper.vm.isModalOpen).toBe(false)
+      expect((wrapper.vm as any).isModalOpen).toBe(false)
 
       // Open and close cycle 2
       await wrapper.find('.pinned-event-details').trigger('click')
-      expect(wrapper.vm.isModalOpen).toBe(true)
+      expect((wrapper.vm as any).isModalOpen).toBe(true)
       await modal.vm.$emit('close')
-      expect(wrapper.vm.isModalOpen).toBe(false)
+      expect((wrapper.vm as any).isModalOpen).toBe(false)
     })
   })
 })

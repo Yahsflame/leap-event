@@ -40,6 +40,7 @@ describe('EventModal', () => {
     location: 'Convention Center, Phoenix',
     description: 'Annual technology conference featuring the latest innovations.',
     image: 'https://example.com/conference.jpg',
+    category: 'technology',
   }
 
   // Helper to mount modal
@@ -189,6 +190,7 @@ describe('EventModal', () => {
         location: '',
         description: '',
         image: '',
+        category: '',
       }
 
       vi.mocked(useTime.formatDate).mockReturnValue('')
@@ -230,6 +232,7 @@ describe('EventModal', () => {
       const partialEvent = {
         name: 'Test Event',
         time: '2025-01-01',
+        category: 'general',
       } as Event
 
       await mountModal({ event: partialEvent, isOpen: true })
@@ -287,6 +290,7 @@ describe('EventModal', () => {
         location: '"; DROP TABLE events; --',
         description: '{{malicious}}',
         image: 'javascript:alert("xss")',
+        category: 'general',
       }
 
       await mountModal({ event: specialCharsEvent, isOpen: true })
