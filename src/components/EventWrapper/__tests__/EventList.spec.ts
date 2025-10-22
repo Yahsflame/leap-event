@@ -489,9 +489,9 @@ describe('EventList', () => {
       })
 
       // Original array should maintain insertion order
-      expect(eventStore.events[0].name).toBe('Late Event')
-      expect(eventStore.events[1].name).toBe('Early Event')
-      expect(eventStore.events[2].name).toBe('Middle Event')
+      expect(eventStore.events[0]?.name).toBe('Late Event')
+      expect(eventStore.events[1]?.name).toBe('Early Event')
+      expect(eventStore.events[2]?.name).toBe('Middle Event')
     })
 
     it('should handle mixed valid and invalid dates', () => {
