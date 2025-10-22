@@ -1,5 +1,5 @@
 <template>
-  <div class="event-wrapper">
+  <div class="event-wrapper" role="main">
     <h2>My Events</h2>
     <PinnedEvents />
     <EventList />

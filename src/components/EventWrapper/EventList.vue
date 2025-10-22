@@ -1,5 +1,9 @@
 <template>
-  <div class="event-list">
+  <div v-if="!sortedEvents.length" class="event-list">
+    <h3>No events are available</h3>
+  </div>
+
+  <div v-else class="event-list">
     <h3>Events</h3>
     <EventCard v-for="event in sortedEvents" :key="event.name" :event="event" />
   </div>

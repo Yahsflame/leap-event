@@ -1,5 +1,9 @@
 <template>
-  <div class="site-banner" :style="{ backgroundColor: backgroundColor, color: fontColor }">
+  <div
+    class="site-banner"
+    :style="{ backgroundColor: backgroundColor, color: fontColor }"
+    role="banner"
+  >
     <div class="banner-container">
       <h1>{{ text }}</h1>
     </div>
