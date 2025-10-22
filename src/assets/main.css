@@ -1,0 +1,51 @@
+html,
+body {
+  margin: 0;
+  padding-bottom: 5rem;
+}
+
+/* H1, used for page headings */
+h1 {
+  font-family: 'Red Hat Display';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.75rem;
+}
+
+/* H2, used for section headings */
+h2 {
+  font-family: 'Red Hat Display';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 2.25rem;
+  color: #000000;
+}
+
+/* H3, used for subsection headings */
+h3 {
+  font-family: 'Red Hat Display';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.25rem;
+  color: #000000;
+}
+
+/* H4, used for list headings */
+h4 {
+  font-family: 'Red Hat Display';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.625rem;
+  color: #000000;
+  margin: 0;
+}
+
+/* P tags are used mainly for body text */
+p {
+  font-family: 'Red Hat Text';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.125rem;
+  color: #000000;
+  margin: 0;
+}

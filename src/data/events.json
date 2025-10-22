@@ -1,0 +1,114 @@
+[
+  {
+    "name": "Comic Con Extravaganza",
+    "time": "2025-11-08T10:00:00-08:00",
+    "location": "San Diego, CA",
+    "image": "https://images.unsplash.com/photo-1730914086215-d86c861806aa?fit=crop&w=800&q=80",
+    "category": "pop culture",
+    "description": "Join us for an unforgettable experience at Comic Con Extravaganza!"
+  },
+  {
+    "name": "Harvest Food Festival",
+    "time": "2025-10-25T12:00:00-04:00",
+    "location": "Portland, OR",
+    "image": "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?fit=crop&w=800&q=80",
+    "category": "food festival",
+    "description": "Savor the flavors of the harvest at our annual food festival!"
+  },
+  {
+    "name": "Winter Wonderland Parade",
+    "time": "2025-12-05T18:00:00-05:00",
+    "location": "Pittsburgh, PA",
+    "image": "https://images.unsplash.com/photo-1482822683622-00effad5052e?fit=crop&w=800&q=80",
+    "category": "holiday attraction",
+    "description": "Celebrate the season with a festive parade in Pittsburgh!"
+  },
+  {
+    "name": "Family Fun Day at the Park",
+    "time": "2025-10-18T09:00:00-05:00",
+    "location": "Austin, TX",
+    "image": "https://images.unsplash.com/photo-1550678881-b59900a5c8e9?fit=crop&w=800&q=80",
+    "category": "family activity",
+    "description": "Enjoy a day of fun and adventure with the whole family at the park!"
+  },
+  {
+    "name": "Jazz & Blues Music Festival",
+    "time": "2025-11-15T19:00:00-06:00",
+    "location": "New Orleans, LA",
+    "image": "https://images.unsplash.com/photo-1502710655568-ee441b74b0b9?fit=crop&w=800&q=80",
+    "category": "music festival",
+    "description": "Experience the soulful sounds of jazz and blues at this annual festival!"
+  },
+  {
+    "name": "Pumpkin Patch Adventure",
+    "time": "2025-10-31T14:00:00-07:00",
+    "location": "Denver, CO",
+    "image": "https://images.unsplash.com/photo-1541695984827-9d6180848e5a?fit=crop&w=800&q=80",
+    "category": "seasonal activity",
+    "description": "Explore the pumpkin patch and enjoy a day of fun and adventure!"
+  },
+  {
+    "name": "Art Gallery Night Walk",
+    "time": "2025-12-12T20:00:00-08:00",
+    "location": "San Francisco, CA",
+    "image": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?fit=crop&w=800&q=80",
+    "category": "art exhibition",
+    "description": "Explore the art gallery and enjoy a night of culture and creativity!"
+  },
+  {
+    "name": "Tech Innovation Expo",
+    "time": "2025-11-22T09:00:00-05:00",
+    "location": "Boston, MA",
+    "image": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?fit=crop&w=800&q=80",
+    "category": "technology",
+    "description": "Explore the latest tech innovations and meet industry leaders!"
+  },
+  {
+    "name": "Craft Beer Tasting Tour",
+    "time": "2025-10-29T16:00:00-04:00",
+    "location": "Asheville, NC",
+    "image": "https://images.unsplash.com/photo-1608270586620-248524c67de9?fit=crop&w=800&q=80",
+    "category": "food festival",
+    "description": "Explore the craft beer scene and enjoy a day of taste and adventure!"
+  },
+  {
+    "name": "Marathon & Fun Run",
+    "time": "2025-11-03T07:00:00-08:00",
+    "location": "Seattle, WA",
+    "image": "https://images.unsplash.com/photo-1524646349956-1590eacfa324?fit=crop&w=800&q=80",
+    "category": "sports event",
+    "description": "Join the marathon and fun run and experience the thrill of running!"
+  },
+  {
+    "name": "Holiday Light Festival",
+    "time": "2025-12-20T17:30:00-07:00",
+    "location": "Phoenix, AZ",
+    "image": "https://images.unsplash.com/photo-1512389142860-9c449e58a543?fit=crop&w=800&q=80",
+    "category": "holiday attraction",
+    "description": "Experience the magic of holiday lights and festive atmosphere!"
+  },
+  {
+    "name": "Science Museum Space Exhibit",
+    "time": "2025-11-01T11:00:00-06:00",
+    "location": "Chicago, IL",
+    "image": "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?fit=crop&w=800&q=80",
+    "category": "educational",
+    "description": "Explore the wonders of space and learn about the latest discoveries!"
+  },
+  {
+    "name": "Farmers Market & Live Music",
+    "time": "2025-10-26T08:00:00-04:00",
+    "location": "Nashville, TN",
+    "image": "https://images.unsplash.com/photo-1488459716781-31db52582fe9?fit=crop&w=800&q=80",
+    "category": "community event",
+    "description": "Discover local produce and enjoy live music in a vibrant atmosphere!"
+  },
+  {
+    "name": "Wine & Cheese Evening",
+    "time": "2025-12-15T18:30:00-08:00",
+    "location": "Napa Valley, CA",
+    "image": "https://images.unsplash.com/photo-1551790629-9d5c2d781d8b?fit=crop&w=800&q=80",
+    "category": "culinary experience",
+    "description": "Savor the flavors of Napa Valley and enjoy a night of wine and cheese!"
+  }
+]
