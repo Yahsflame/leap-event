@@ -113,7 +113,7 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: var(--color-overlay);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -122,7 +122,7 @@ onUnmounted(() => {
 }
 
 .modal-container {
-  background: white;
+  background: var(--color-white);
   border-radius: 1rem;
   max-width: 35.5rem;
   width: 100%;
@@ -130,15 +130,15 @@ onUnmounted(() => {
   overflow-y: auto;
   position: relative;
   box-shadow:
-    0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    0 20px 25px -5px var(--color-shadow-primary),
+    0 10px 10px -5px var(--color-shadow-secondary);
 }
 
 .modal-close {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: white;
+  background: var(--color-white);
   border: none;
   border-radius: 50%;
   width: 2.5rem;
@@ -149,11 +149,11 @@ onUnmounted(() => {
   cursor: pointer;
   z-index: 10;
   transition: all 0.2s;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px var(--color-shadow-button);
 }
 
 .modal-close:hover {
-  background: #f5f5f5;
+  background: var(--color-hover);
   transform: scale(1.1);
 }
 
@@ -166,7 +166,7 @@ onUnmounted(() => {
   position: absolute;
   top: 1rem;
   right: 4.5rem;
-  background: white;
+  background: var(--color-white);
   border: none;
   border-radius: 48px;
   height: 2.5rem;
@@ -178,11 +178,11 @@ onUnmounted(() => {
   cursor: pointer;
   z-index: 10;
   transition: all 0.2s;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px var(--color-shadow-button);
 }
 
 .pin-icon-button:hover {
-  background: #f5f5f5;
+  background: var(--color-hover);
   transform: scale(1.1);
 }
 

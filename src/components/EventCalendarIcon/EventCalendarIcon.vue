@@ -23,11 +23,11 @@ defineProps<{ date: string }>()
   width: 5.938rem;
   height: fit-content;
   margin-top: 1rem;
-  background: #ffffff;
-  border: 1px solid #d5d5d5;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
   box-shadow:
-    0px 4px 8px -2px rgba(16, 24, 40, 0.1),
-    0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+    0px 4px 8px -2px var(--color-shadow-primary),
+    0px 2px 4px -2px var(--color-shadow-secondary);
   border-radius: 0.5rem;
 }
 .calendar-time {
@@ -39,7 +39,7 @@ defineProps<{ date: string }>()
 .calendar-banner {
   width: 6rem;
   height: 0.375rem;
-  background: #32f6c5;
+  background: var(--color-accent);
 }
 .calendar-month {
   font-family: 'Red Hat Text';

@@ -37,17 +37,17 @@ const pinnedStore = usePinnedEventsStore()
 }
 
 .pinned-grid::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--color-scrollbar-track);
   border-radius: 0.375rem;
 }
 
 .pinned-grid::-webkit-scrollbar-thumb {
-  background: #888;
+  background: var(--color-scrollbar);
   border-radius: 0.375rem;
 }
 
 .pinned-grid::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: var(--color-scrollbar-hover);
 }
 
 .pinned-grid {

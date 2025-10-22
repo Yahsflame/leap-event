@@ -75,7 +75,7 @@ const togglePin = () => {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--color-overlay-white);
   border: none;
   border-radius: 50%;
   width: 2rem;
@@ -90,7 +90,7 @@ const togglePin = () => {
 }
 
 .pin-icon-button:hover {
-  background: white;
+  background: var(--color-white);
   transform: scale(1.1);
 }
 
